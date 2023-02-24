@@ -4,16 +4,16 @@ import { useParams } from 'react-router-dom';
 
 const Product = ({data}) => {
   const params = useParams();
-  const item = data.filter((item) => item.id === params.id);
+  const item = data.find((item) => item.id === params.id);
   return (
     <>
-      <p>{item[0].description}</p>
-      <p>{item[0].price + ' NIS'}</p>
+      <p>{item.description}</p>
+      <p>{item.price + ' NIS'}</p>
       <p><Link to='/shoes'>back</Link></p>
       <img 
-        key={item[0].id} 
-        alt={item[0].description + ' ' + item[0].price}
-        src={item[0].imgUrl}
+        key={item.id} 
+        alt={item.description + ' ' + item.price}
+        src={item.imgUrl}
         width='100%'
         
         />

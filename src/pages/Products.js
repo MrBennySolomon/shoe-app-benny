@@ -5,16 +5,16 @@ import '../styles/MainNavigation.modules.css';
 
 const Products = ({data}) => {
   
+  
   return (
     <>
       <h1>Shoes Page</h1>
 
       {data.map((item) => <Link key={item.id} to={`/shoes/${item.id}`}><img 
         key={item.id} 
-        alt={item.description + ' ' + item.price}
+        alt={item.description}
         src={item.imgUrl}
-        width='300px'
-        height='200px'
+        width='100%'
         /></Link>)}
     </>
   )}
