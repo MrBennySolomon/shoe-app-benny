@@ -17,7 +17,7 @@ html {
 
 nav {
   width:90vw;
-  height: 20vh;
+  height: 10%;
   background-color: #333;
   border: 2px solid white;
   border-radius: 20px;
@@ -79,6 +79,11 @@ p {
 .flex {
   width: 100vw;
   height: 100vh;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -88,7 +93,7 @@ h1 {
 }
 
 div.scroll {
-  width: 100%;
+  width: 100vw;
   height: 60%;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -98,5 +103,10 @@ div.scroll {
   .flex {
     width: 50vw;
     height: 100vh;
+  }
+
+  div.scroll {
+    width: 50vw;
+    height: 60%;
   }
 }
