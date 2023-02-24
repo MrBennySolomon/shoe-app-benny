@@ -1,19 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
-import React from 'react'
+import React , { useEffect, useState }from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/MainNavigation.modules.css';
 
-const Products = ({data}) => {
-  
+const Products = ({data, setData}) => {
+  const [arrayIds, setArrayIds] = useState([]);
+ 
+  useEffect(() => {
+    setArrayIds(Object.keys(data));
+  }, []);
   
   return (
     <>
       <h1>Shoes Page</h1>
 
-      {data.map((item) => <Link key={item.id} to={`/shoes/${item.id}`}><img 
-        key={item.id} 
-        alt={item.description}
-        src={item.imgUrl}
+      {arrayIds.map((id) => <Link key={id} to={`/shoes/${id}`}><img 
+        key={id} 
+        alt={data[id].description}
+        src={data[id].imgUrl}
         width='100%'
         /></Link>)}
     </>

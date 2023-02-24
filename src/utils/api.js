@@ -10,7 +10,9 @@ const API = {
     this.shoes
       .delete(`/${id}.json`)
       .then((response) => {
+        console.log(`item id ${id} was deleted seccesfully`);
         return "Shoe Was Deleted!";
+        
       })
       .catch((error) => {
         return "Error while deleting shoe";
