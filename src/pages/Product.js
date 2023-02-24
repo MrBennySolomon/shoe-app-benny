@@ -26,7 +26,6 @@ const Product = ({data, setData}) => {
     });
   }
 
-  console.log('params.id', params.id)
   return (
     <>
     <div className='shoes-data'>

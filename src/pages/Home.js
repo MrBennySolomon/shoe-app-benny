@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <h1>Shoes Manager</h1>
-      <img className='welcome' alt='welcome'/>
+      <img className='welcome' alt=''/>
     </>
   )
 }
