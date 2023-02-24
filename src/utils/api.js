@@ -45,7 +45,7 @@ const API = {
 
   async editShoe(updatedData, id) {
     this.shoes
-      .patch(`/${id}.json`, updatedData)
+      .put(`/${id}.json`, updatedData)
       .then((response) => {
         console.log("Shoe updated successfully:", response.data);
       })

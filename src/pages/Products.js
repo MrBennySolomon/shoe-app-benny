@@ -1,24 +1,53 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React , { useEffect, useState }from 'react'
-import { Link } from 'react-router-dom';
+import React , { useRef, useEffect, useState }from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/MainNavigation.modules.css';
+import API from '../utils/api';
 
 const Products = ({data, setData}) => {
   const [arrayIds, setArrayIds] = useState([]);
+  const [isAddMode, setIsAddMode] = useState(false);
+  const navigate = useNavigate();
+
+  const inputDescRef = useRef();
+  const inputPriceRef = useRef();
+  const inputImgRef = useRef();
+
+  let fetchData;
+
+  if (data) fetchData = async () => setArrayIds(Object.keys(await data));
  
   useEffect(() => {
-    setArrayIds(Object.keys(data));
+    fetchData();
   }, []);
+
+  const addHandler = () => {
+    setIsAddMode(true);
+  };
+
+  const clickHandler = () => {
+    API.addShoe({imgUrl: inputImgRef.current.value, description: inputDescRef.current.value,price: inputPriceRef.current.value});
+    navigate('/');
+    navigate(0);
+    setIsAddMode(false);
+  }
   
   return (
     <>
-      <h1>Shoes Page</h1>
-
-      {arrayIds.map((id) => <Link key={id} to={`/shoes/${id}`}><img 
+      <h1>Shoes Page <span><button onClick={addHandler} className='btn-add'> + </button></span></h1>
+      {isAddMode && 
+        <>
+          <input ref={inputImgRef} type='text' placeholder='imgUrl'/>
+          <input ref={inputDescRef} type='text' placeholder='description'/>
+          <input ref={inputPriceRef} type='number' placeholder='price'/>
+          <button onClick={clickHandler}>Done</button>
+        </>
+      }
+      {data && arrayIds.map((id) => <Link key={id} to={`/shoes/${id}`}><img 
         key={id} 
-        alt={data[id].description}
-        src={data[id].imgUrl}
+        alt={data[id]?.description}
+        src={data[id]?.imgUrl}
         width='100%'
         /></Link>)}
     </>

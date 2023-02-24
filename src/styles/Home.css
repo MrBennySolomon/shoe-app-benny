@@ -7,6 +7,17 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
   background: url(../img/welcome.png) no-repeat center center/contain;
+  width: 200px;
+  height: 145px;
 }

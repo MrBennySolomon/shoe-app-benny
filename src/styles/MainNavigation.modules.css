@@ -58,10 +58,11 @@ span {
   font-size: 2rem;
   border-radius: 50%;
   border: 3px solid white;
-  padding: 0.3rem 0.9rem
+  padding: 0.3rem 0.6rem
 }
 
 button.btn-add {
+  font-size: 2rem;
   background-color: transparent;
   text-decoration: none;
   border: none;

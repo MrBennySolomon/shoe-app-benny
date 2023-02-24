@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/Home';
 import ProductsPage from './pages/Products';
-import Root from './pages/Root'
+import Root from './pages/Root';
 import Product from './pages/Product'
 import './App.css';
 import API from './utils/api';
@@ -14,13 +14,19 @@ import API from './utils/api';
 
     async function fetchShoes() {
         try {
-          const response = await API.getShoes();
-          // use the setShoes function to update the state with the retrieved data
-          setData(response);
+          await API.getShoes().then((res) => {
+            console.log('res', res)
+            setData(res);
+            
+          });
         } catch (error) {
           console.error("Error retrieving shoes:", error);
         }
       }
+
+      useEffect(() => {
+        fetchShoes();
+      }, []);
 
     const router = createBrowserRouter([
     {

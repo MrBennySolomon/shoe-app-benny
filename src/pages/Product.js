@@ -10,21 +10,18 @@ const Product = ({data, setData}) => {
   const params = useParams();
   const inputDescRef = useRef();
   const inputPriceRef = useRef();
-
-  // useEffect(() => {
-  //   navigate('/shoes');
-  // }, [data]);
-
-
+  const inputImgRef = useRef();
 
   const clickHandler = () => {
-    API.editShoe({id: params.id,description: inputDescRef.current.value,price: inputPriceRef.current.value});
+    API.editShoe({imgUrl: inputImgRef.current.value, description: inputDescRef.current.value, price: inputPriceRef.current.value}, params.id);
+    navigate('/');
+    navigate(0);
     setIsEditable(false);
   }
 
   const fetchShoes = async() => {
     await setData().then((res) => {
-      navigate('/shoes');
+      navigate('/');
       navigate(0);
     });
   }
@@ -43,8 +40,10 @@ const Product = ({data, setData}) => {
     </div>
     {isEditable && 
       <>
-        <input ref={inputDescRef} type='text' placeholder='description'/>
-        <input ref={inputPriceRef} type='number' placeholder='price'/>
+      <br/>
+        <input ref={inputImgRef} type='text' placeholder={data[params.id].imgUrl}/>
+        <input ref={inputDescRef} type='text' placeholder={data[params.id].description}/>
+        <input ref={inputPriceRef} type='number' placeholder={data[params.id].price}/>
         <button onClick={clickHandler}>Done</button>
       </>}
     <img 
