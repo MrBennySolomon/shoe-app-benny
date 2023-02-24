@@ -34,7 +34,7 @@ const Products = ({data, setData}) => {
   }
   
   return (
-    <>
+    <div className='flex'>
       <h1>Shoes Page <span><button onClick={addHandler} className='btn-add'> + </button></span></h1>
       {isAddMode && 
         <>
@@ -44,13 +44,15 @@ const Products = ({data, setData}) => {
           <button onClick={clickHandler}>Done</button>
         </>
       }
-      {data && arrayIds.map((id) => <Link key={id} to={`/shoes/${id}`}><img 
-        key={id} 
-        alt={data[id]?.description}
-        src={data[id]?.imgUrl}
-        width='100%'
-        /></Link>)}
-    </>
+      <div className='scroll'>
+        {data && arrayIds.map((id) => <Link key={id} to={`/shoes/${id}`}><img 
+          key={id} 
+          alt={data[id]?.description}
+          src={data[id]?.imgUrl}
+          width='100%'
+          /></Link>)}
+      </div>
+    </div>
   )}
 
 export default Products;
