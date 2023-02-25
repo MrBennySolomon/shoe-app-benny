@@ -2,25 +2,25 @@
 # [Shoes Manager App](https://shoe-app-benny.netlify.app/)
 ### The Shoes Manager App contains the following subjects:
 -----------------------------------------------------------
-### ● JSX
-### ● Props
-### ● useState
-### ● useEffect
-### ● useRef
-### ● Route
-### ● Axios
-### ● CRUD
-### ● HTTP Requests
-### ● Google Fire-base
+#### ● JSX
+#### ● Props
+#### ● useState
+#### ● useEffect
+#### ● useRef
+#### ● Route
+#### ● Axios
+#### ● CRUD
+#### ● HTTP Requests
+#### ● Google Fire-base
 -------------------------------------------------------------------------------------------------
-● Home Page :          {path: '/' ... },
-● Shoes Page :         {path: '/shoes' ... },
-● Shoes Details Page : {path: '/shoes/:id' ... }
+#### ● Home Page :          {path: '/' ... },
+#### ● Shoes Page :         {path: '/shoes' ... },
+#### ● Shoes Details Page : {path: '/shoes/:id' ... }
 -------------------------------------------------------------------------------------------------
 dependencies: 
 -------------
-● react-router-dom
-● axios
+#### ● react-router-dom
+#### ● axios
 -------------------------------------------------------------------------------------------------
 ## [live demo at: https://shoe-app-benny.netlify.app/](https://shoe-app-benny.netlify.app/)
 -------------------------------------------------------------------------------------------------
