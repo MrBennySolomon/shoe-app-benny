@@ -34,7 +34,7 @@ import API from './utils/api';
       element: <Root/>,
   
     children: [
-      {path: '/', element: <HomePage/>},
+      {path: '/', element: <HomePage data={data}/>},
       {path: '/shoes', element: <ProductsPage data={data} setData={fetchShoes}/>},
       {path: '/shoes/:id', element: <Product data={data} setData={fetchShoes}/>}
     ]

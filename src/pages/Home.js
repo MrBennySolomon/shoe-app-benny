@@ -1,7 +1,7 @@
 import ImageSlider from "./ImageSlider";
 import React from 'react'
 import '../styles/Home.css';
-const Home = () => {
+const Home = ({data}) => {
   const slides = [
     { url: "https://i.etsystatic.com/15626562/r/il/7e20d1/3164394919/il_1140xN.3164394919_63is.jpg", title: "nike pink for women" },
     { url: "https://i.etsystatic.com/10236127/r/il/3d1f04/1159992733/il_1140xN.1159992733_38ga.jpg", title: "nike colorful for men" },
