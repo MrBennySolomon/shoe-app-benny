@@ -105,6 +105,11 @@ div.box {
   height: 30vh;
 }
 
+img.shoe-id {
+  width: 50vmin;
+  height: 50vmin;
+}
+
 @media (min-width:600px) {
   .flex {
     width: 50vw;

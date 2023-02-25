@@ -46,6 +46,7 @@ const Product = ({data, setData}) => {
         <button onClick={clickHandler}>Done</button>
       </>}
     <img 
+      className='shoe-id'
       key={data[params.id].id} 
       alt={data[params.id].description}
       src={data[params.id].imgUrl}
